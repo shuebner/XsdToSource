@@ -2,7 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGXmlSchemaClassGenerator-beta)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_ComponentModel_Annotations)\ref\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_Text_Encoding_CodePages)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_ValueTuple)\lib\netstandard1.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_Runtime_CompilerServices_Unsafe)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="sample_schema.xsd" />
@@ -18,14 +30,14 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.10.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="all" />
   </ItemGroup>
-<ItemGroup>
-  <PackageReference Include="XmlSchemaClassGenerator-beta" Version="2.0.560" PrivateAssets="all" GeneratePathProperty="true" />
-  <PackageReference Include="System.CodeDom" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
-  <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
-  <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
-  <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
-  <PackageReference Include="System.ValueTuple" Version="4.5.0" PrivateAssets="all" GeneratePathProperty="true" />
-</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="XmlSchemaClassGenerator-beta" Version="2.0.560" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="System.CodeDom" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="System.ComponentModel.Annotations" PrivateAssets="all" Version="5.0.0" GeneratePathProperty="true" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" PrivateAssets="all" GeneratePathProperty="true" />
+  </ItemGroup>
 
 <PropertyGroup>
   <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>

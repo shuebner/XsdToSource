@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XsdToSource" Version="1.0.0" />
+    <PackageReference Include="XsdToSource" Version="1.0.9" />
+    <AdditionalFiles Include="sample_schema.xsd" />
   </ItemGroup>
 
 </Project>

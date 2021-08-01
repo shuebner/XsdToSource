@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="sample_schema.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="sample_schema.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>

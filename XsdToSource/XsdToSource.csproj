@@ -4,26 +4,23 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PKGXmlSchemaClassGenerator-beta)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    <None Include="System.ComponentModel.Annotations.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <!--<None Include="System.ComponentModel.Annotations.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />-->
+    <None Include="$(PKGSystem_ComponentModel_Annotations)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PKGSystem_Text_Encoding_CodePages)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PKGSystem_ValueTuple)\lib\netstandard1.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PKGSystem_Runtime_CompilerServices_Unsafe)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="sample_schema.xsd" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="sample_schema.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <None Remove="bin\Debug\netstandard2.0\\XsdToSource.dll" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,8 +30,8 @@
   <ItemGroup>
     <PackageReference Include="XmlSchemaClassGenerator-beta" Version="2.0.560" PrivateAssets="all" GeneratePathProperty="true" />
     <PackageReference Include="System.CodeDom" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
-    <Reference Include="System.ComponentModel.Annotations.dll" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <!--<Reference Include="System.ComponentModel.Annotations.dll" />-->
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" GeneratePathProperty="true" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" PrivateAssets="all" GeneratePathProperty="true" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" PrivateAssets="all" GeneratePathProperty="true" />
@@ -48,7 +45,8 @@
   <ItemGroup>
     <TargetPathWithTargetPlatformMoniker Include="$(PKGXmlSchemaClassGenerator-beta)\lib\netstandard2.0\XmlSchemaClassGenerator.dll" IncludeRuntimeDependency="false" />
     <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\System.CodeDom.dll" IncludeRuntimeDependency="false" />
-    <TargetPathWithTargetPlatformMoniker Include="System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />
+    <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ComponentModel_Annotations)\lib\netstandard2.0\System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />
+    <!--<TargetPathWithTargetPlatformMoniker Include="System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />-->
     <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Encoding_CodePages)\lib\netstandard2.0\System.Text.Encoding.CodePages.dll" IncludeRuntimeDependency="false" />
     <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ValueTuple)\lib\netstandard1.0\System.ValueTuple.dll" IncludeRuntimeDependency="false" />
     <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Runtime_CompilerServices_Unsafe)\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" IncludeRuntimeDependency="false" />

@@ -35,7 +35,7 @@ namespace XsdToSource
 #if DEBUG
             if (!Debugger.IsAttached)
             {
-                Debugger.Launch();
+                //Debugger.Launch();
             }
 #endif
             //var schema = context.AdditionalFiles.First(t => t.Path.EndsWith(".xsd"));

@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XsdToSource", "XsdToSource\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{8EF145F7-2D9A-449E-AC98-50952B02FD5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocoTests", "PocoTests\PocoTests.csproj", "{4F2617B2-84E7-4436-9A32-673E78998724}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleNuget", "SampleNuget\SampleNuget.csproj", "{7A69ADB7-3B09-47A1-BE29-55341C4B5668}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F2617B2-84E7-4436-9A32-673E78998724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F2617B2-84E7-4436-9A32-673E78998724}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F2617B2-84E7-4436-9A32-673E78998724}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F2617B2-84E7-4436-9A32-673E78998724}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A69ADB7-3B09-47A1-BE29-55341C4B5668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A69ADB7-3B09-47A1-BE29-55341C4B5668}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A69ADB7-3B09-47A1-BE29-55341C4B5668}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A69ADB7-3B09-47A1-BE29-55341C4B5668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

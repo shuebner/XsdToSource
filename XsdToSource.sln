@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XsdToSource", "XsdToSource\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{8EF145F7-2D9A-449E-AC98-50952B02FD5E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocoTests", "PocoTests\PocoTests.csproj", "{65963AC3-2DCE-4C9C-A8C7-655EE778E6AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF145F7-2D9A-449E-AC98-50952B02FD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65963AC3-2DCE-4C9C-A8C7-655EE778E6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65963AC3-2DCE-4C9C-A8C7-655EE778E6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65963AC3-2DCE-4C9C-A8C7-655EE778E6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65963AC3-2DCE-4C9C-A8C7-655EE778E6AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

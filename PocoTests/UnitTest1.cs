@@ -12,7 +12,7 @@ namespace PocoTests
         [Test]
         public void Test1()
         {
-            var pocoInstance = new Mysamplenamespace.MyRootElement();
+            var pocoInstance = new MyRootElement();
         }
     }
 }

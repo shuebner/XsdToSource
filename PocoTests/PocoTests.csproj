@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="sample_schema.xsd" />
-    <AdditionalFiles Include="sample_schema.xsd" />
+    <AdditionalFiles Include="sample_schema.xsd" XsdToSource_RootNamespace="PocoTests" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +20,7 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="XsdToSource_RootNamespace" />
     <ProjectReference Include="..\XsdToSource\XsdToSource.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 

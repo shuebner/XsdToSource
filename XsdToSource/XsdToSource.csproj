@@ -31,22 +31,26 @@
 
   <ItemGroup>
     <!-- so that consuming projects can use the generated code -->
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" PrivateAssets="true" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
-<PropertyGroup>
-  <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
-</PropertyGroup>
-
-<Target Name="GetDependencyTargetPaths">
   <ItemGroup>
-    <TargetPathWithTargetPlatformMoniker Include="$(PKGXmlSchemaClassGenerator-beta)\lib\netstandard2.0\XmlSchemaClassGenerator.dll" IncludeRuntimeDependency="false" />
-    <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\System.CodeDom.dll" IncludeRuntimeDependency="false" />
-    <!--<TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ComponentModel_Annotations)\lib\netstandard2.0\System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />-->
-    <TargetPathWithTargetPlatformMoniker Include="$(MSBuildProjectDirectory)/System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />
-    <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Encoding_CodePages)\lib\netstandard2.0\System.Text.Encoding.CodePages.dll" IncludeRuntimeDependency="false" />
-    <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ValueTuple)\lib\netstandard1.0\System.ValueTuple.dll" IncludeRuntimeDependency="false" />
-    <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Runtime_CompilerServices_Unsafe)\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" IncludeRuntimeDependency="false" />
+    <None Include="build\XsdToSource.props" Pack="true" PackagePath="build/$(PackageId).props" />
   </ItemGroup>
-</Target>
+
+  <PropertyGroup>
+    <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+  </PropertyGroup>
+
+  <Target Name="GetDependencyTargetPaths">
+    <ItemGroup>
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGXmlSchemaClassGenerator-beta)\lib\netstandard2.0\XmlSchemaClassGenerator.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\System.CodeDom.dll" IncludeRuntimeDependency="false" />
+      <!--<TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ComponentModel_Annotations)\lib\netstandard2.0\System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />-->
+      <TargetPathWithTargetPlatformMoniker Include="$(MSBuildProjectDirectory)/System.ComponentModel.Annotations.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Encoding_CodePages)\lib\netstandard2.0\System.Text.Encoding.CodePages.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_ValueTuple)\lib\netstandard1.0\System.ValueTuple.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Runtime_CompilerServices_Unsafe)\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" IncludeRuntimeDependency="false" />
+    </ItemGroup>
+  </Target>
 </Project>

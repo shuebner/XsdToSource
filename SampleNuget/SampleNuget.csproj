@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XsdToSource" Version="1.1.0" />
-    <AdditionalFiles Include="sample_schema.xsd" />
+    <PackageReference Include="XsdToSource" Version="1.1.8" />
+    <!--<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="XsdToSource_RootNamespace" />-->
+    <AdditionalFiles Include="sample_schema.xsd" XsdToSource_RootNamespace="Sample.Generated" />
   </ItemGroup>
 
 </Project>

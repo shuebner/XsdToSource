@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="sample_schema.xsd" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="XsdToSource_RootNamespace" />
+    <AdditionalFiles Include="sample_schema.xsd" XsdToSource_RootNamespace="Sample.Generated"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -6,7 +6,7 @@ namespace Sample
     {
         public void Test()
         {
-            var pocoInstance = new Mysamplenamespace.MyRootElement();
+            var pocoInstance = new Sample.Generated.MyRootElement();
         }
     }
 }

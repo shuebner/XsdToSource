@@ -1,6 +1,8 @@
 ﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Diagnostics;
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -38,34 +40,44 @@ namespace XsdToSource
                 //Debugger.Launch();
             }
 #endif
-            //var schema = context.AdditionalFiles.First(t => t.Path.EndsWith(".xsd"));
-            AdditionalText schema;
-            try
+            var configurations = GetConfigurations(context);
+
+            foreach (var (schemaFile, @namespace) in configurations)
             {
-                schema = context.AdditionalFiles.First();
-            }
-            catch (Exception e)
-            {
-                context.AddSource("errors", e.Message);
-                return;
-            }
+                var schemaStr = schemaFile.GetText().ToString();
+                var stringReader = new StringReader(schemaStr);
 
-            var schemaStr = schema.GetText().ToString();
-            var stringReader = new StringReader(schemaStr);
+                var schemaSet = new XmlSchemaSet();
+                schemaSet.Add("mysamplenamespace", XmlReader.Create(stringReader));
 
-            var schemaSet = new XmlSchemaSet();
-            schemaSet.Add("mysamplenamespace", XmlReader.Create(stringReader));
-
-            var generator = new Generator();
-            MemoryOutputWriter memoryOutputWriter = new MemoryOutputWriter();
-            generator.OutputWriter = memoryOutputWriter;
-            generator.Generate(schemaSet);
-            context.AddSource("pocos", memoryOutputWriter.Content);
+                var generator = new Generator();
+                generator.NamespaceProvider.Add(new NamespaceKey("mysamplenamespace"), @namespace);
+                MemoryOutputWriter memoryOutputWriter = new MemoryOutputWriter();
+                generator.OutputWriter = memoryOutputWriter;
+                generator.Generate(schemaSet);
+                context.AddSource("Pocos", memoryOutputWriter.Content);
+            }            
         }
 
         public void Initialize(GeneratorInitializationContext context)
         {
             // do nothing
+        }
+
+        static IEnumerable<(AdditionalText SchemaFile, string Namespace)> GetConfigurations(GeneratorExecutionContext context)
+        {
+            foreach (AdditionalText file in context.AdditionalFiles)
+            {
+                if (Path.GetExtension(file.Path).Equals(".xsd", StringComparison.OrdinalIgnoreCase))
+                {
+                    AnalyzerConfigOptions analyzerConfigOptions = context.AnalyzerConfigOptions.GetOptions(file);
+                    if (analyzerConfigOptions.TryGetValue("build_metadata.AdditionalFiles.XsdToSource_RootNamespace", out string @namespace))
+                    {
+                        yield return (file, @namespace);
+                    }
+
+                }
+            }
         }
     }
 }

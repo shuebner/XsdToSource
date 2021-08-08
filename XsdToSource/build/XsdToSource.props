@@ -1,0 +1,5 @@
+﻿<Project>
+  <ItemGroup>
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="XsdToSource_RootNamespace" />
+  </ItemGroup>
+</Project>

@@ -4,6 +4,21 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+    
+    <AssemblyTitle>SvSoft.XsdToSource</AssemblyTitle>
+    <PackageId>SvSoft.XsdToSource</PackageId>
+    <Title>XSD to POCO Source Generator</Title>
+    <Authors>Sven Hübner</Authors>
+    <Copyright>Copyright (c) 2021 Sven Hübner</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>xml;xsd;Schema;Source Generator;poco;XmlSchemaClassGenerator</PackageTags>
+    <Description>
+      Source generator for POCOs from XSD schema files, based on XmlSchemaClassGenerator (see https://github.com/mganss/XmlSchemaClassGenerator).
+    </Description>
+    <PackageProjectUrl>https://github.com/shuebner/XsdToSource</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/shuebner/XsdToSource</RepositoryUrl>
+    <RespositoryType>git</RespositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

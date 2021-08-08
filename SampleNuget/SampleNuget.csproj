@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XsdToSource" Version="1.1.8" />
-    <!--<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="XsdToSource_RootNamespace" />-->
+    <PackageReference Include="SvSoft.XsdToSource" Version="0.1.0-preview" />
     <AdditionalFiles Include="sample_schema.xsd" XsdToSource_RootNamespace="Sample.Generated" />
   </ItemGroup>
 

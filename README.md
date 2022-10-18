@@ -9,6 +9,8 @@ Features like including multiple dependent schema files are not tested or implem
 
 You can read about my experience writing it and how to put the pieces together on [my blog](https://svenhuebner-it.com/creating-pocos-from-xsd-with-a-source-generator/).
 
+Please note the [improvement suggestion](https://github.com/shuebner/XsdToSource/issues/1#issue-1410284424) by [JulianBirch](https://github.com/JulianBirch).
+
 # How to use
 Add nuget package (enable preview) SvSoft.XsdToSource to your project.
 Then configure xsd to use by the generator:
